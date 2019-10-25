@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.text-popup {
+				animation: textPopup 1s;
+				color: red;
+				user-select: none;
+				white-space: nowrap;
+				position: absolute;
+				z-index: 99;
+			}
+			
+			@keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+			@-moz-keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+			@-webkit-keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+			@-o-keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+			var fnTextPopup = function(arr, options) {
+				// arr参数是必须的
+				if(!arr || !arr.length) {
+					return;
+				}
+				// 主逻辑
+				var index = 0;
+				document.documentElement.addEventListener('click', function(event) {
+					var x = event.pageX,
+						y = event.pageY;
+					var eleText = document.createElement('span');
+					eleText.className = 'text-popup';
+					this.appendChild(eleText);
+					if(arr[index]) {
+						eleText.innerHTML = arr[index];
+					} else {
+						index = 0;
+						eleText.innerHTML = arr[0];
+					}
+					// 动画结束后删除自己
+					eleText.addEventListener('animationend', function() {
+						eleText.parentNode.removeChild(eleText);
+					});
+					// 位置
+					eleText.style.left = (x - eleText.clientWidth / 2) + 'px';
+					eleText.style.top = (y - eleText.clientHeight) + 'px';
+					// index递增
+					index++;
+				});
+			};
+
+			fnTextPopup(['周露露', '是', '个', '假', '的', '程序媛']);
+		</script>
+	</body>
+
+</html>
