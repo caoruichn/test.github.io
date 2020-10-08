@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>给哲哲做的地图</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no"/>
+        <link rel="shortcut icon" href="favicon.ico">
+        <script type="text/javascript" src="https://webapi.amap.com/subway?v=1.0&key=52eb114aaee1bd2f2e83eed6cce2225f&callback=cbk"></script>
+        <style>
+            body {
+                font-family: Tahoma, Verdana, Arial, sans-serif;
+            }
+            .text-popup {
+                animation: textPopup 1s;
+                color: red;
+                user-select: none;
+                white-space: nowrap;
+                position: absolute;
+                z-index: 99;
+                    }
+                    @keyframes textPopup {
+                100% {
+                    opacity: 0;
+                }
+                5% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-50px);
+                }
+                }
+                @-moz-keyframes textPopup {
+                100% {
+                    opacity: 0;
+                }
+                5% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-50px);
+                }
+                }
+                @-webkit-keyframes textPopup {
+                100% {
+                    opacity: 0;
+                }
+                5% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-50px);
+                }
+                }
+                @-o-keyframes textPopup {
+                100% {
+                    opacity: 0;
+                }
+                5% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-50px);
+                }
+            }
+            .footer {
+                font-size: 12px;
+                font-family: Microsoft YaHei;
+                color: #C0C0C0;
+                text-align: center;
+                line-height: 30px;
+                position: fixed;
+                left: 0px;
+                right: 0;
+                bottom: 0px;
+                background-color: rgba(0,0,0,0.4);
+                z-index: 9999;
+            }
+            audio{
+                display: none;
+            }
+            .play {
+                transform-origin:0 0;
+                -moz-transform-origin:0 0;
+                -webkit-transform-origin:0 0;
+                -o-transform-origin:0 0;
+                animation: myplay 1s ease-in-out;
+                -moz-animation: myplay 1s ease-in-out;
+                -webkit-animation: myplay 1s ease-in-out;
+                -o-animation: myplay 1s ease-in-out;
+                animation-iteration-count:infinite;
+                -moz-animation-iteration-count:infinite;
+                -webkit-animation-iteration-count:infinite;
+                -o-animation-iteration-count:infinite;
+                animation-direction:alternate;
+                -moz-animation-direction:alternate;
+                -webkit-animation-direction:alternate;
+                -o-animation-direction:alternate;
+            }
+            @keyframes myplay
+            {
+                0%    {transform:rotate(20deg);}
+                100%    {transform:rotate(70deg);}
+            }
+
+            @-moz-keyframes myplay /* Firefox */
+            {
+                0%    {transform:rotate(20deg);}
+                100%    {transform:rotate(70deg);}
+            }
+
+            @-webkit-keyframes myplay /* Safari and Chrome */
+            {
+                0%    {transform:rotate(20deg);}
+                100%    {transform:rotate(70deg);}
+
+            @-o-keyframes myplay /* Opera */
+            {
+                0%    {transform:rotate(20deg);}
+                100%    {transform:rotate(70deg);}
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mysubway"></div> 
+        <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            window.cbk = function(){
+                var mysubway = subway("mysubway", {
+                    easy: 1,
+                    adcode: 1100
+                });
+                // 打开下面一行注释可以在控制台查看城市adcode
+                //mysubway.getCityList(myFunction)
+            };
+            /**下面是各城市adcode，修改上面adcode: 1100的代码为即可修改刷新即可修改地图
+            1100: {city: "beijing", name: "北京"}
+            1200: {city: "tianjin", name: "天津"}
+            1301: {city: "shijiazhuang", name: "石家庄"}
+            1501: {city: "huhehaote", name: "呼和浩特"}
+            2101: {city: "shenyang", name: "沈阳"}
+            2102: {city: "dalian", name: "大连"}
+            2201: {city: "changchun", name: "长春"}
+            2301: {city: "haerbin", name: "哈尔滨"}
+            3100: {city: "shanghai", name: "上海"}
+            3201: {city: "nanjing", name: "南京"}
+            3202: {city: "wuxi", name: "无锡"}
+            3203: {city: "xuzhou", name: "徐州"}
+            3204: {city: "changzhou", name: "常州"}
+            3205: {city: "suzhou", name: "苏州"}
+            3301: {city: "hangzhou", name: "杭州"}
+            3302: {city: "ningbo", name: "宁波"}
+            3303: {city: "wenzhou", name: "温州"}
+            3401: {city: "hefei", name: "合肥"}
+            3501: {city: "fuzhou", name: "福州"}
+            3502: {city: "xiamen", name: "厦门"}
+            3601: {city: "nanchang", name: "南昌"}
+            3701: {city: "jinan", name: "济南"}
+            3702: {city: "qingdao", name: "青岛"}
+            4101: {city: "zhengzhou", name: "郑州"}
+            4201: {city: "wuhan", name: "武汉"}
+            4301: {city: "changsha", name: "长沙"}
+            4401: {city: "guangzhou", name: "广州"}
+            4403: {city: "shenzhen", name: "深圳"}
+            4406: {city: "foshan", name: "佛山"}
+            4419: {city: "dongguan", name: "东莞"}
+            4501: {city: "nanning", name: "南宁"}
+            5000: {city: "chongqing", name: "重庆"}
+            5101: {city: "chengdu", name: "成都"}
+            5201: {city: "guiyang", name: "贵阳"}
+            5301: {city: "kunming", name: "昆明"}
+            6101: {city: "xian", name: "西安"}
+            6201: {city: "lanzhou", name: "兰州"}
+            6501: {city: "wulumuqi", name: "乌鲁木齐"}
+            8100: {city: "xianggang", name: "香港"}
+            8200: {city: "aomen", name: "澳门"}*/
+            function myFunction(cityInfo) {
+                console.log(p1)
+            }
+            var audio = document.getElementById('audioid');
+            $('.play').on('click',function(){
+                if (audio.paused) {
+                    // 开始播放当前点击的音频
+                    audio.play();
+                    $('#audioPlayer').attr('src', 'img/c10.png');  
+                } else {
+                    audio.pause();
+                    $('#audioPlayer').attr('src', 'img/c5.png');
+                }
+            });
+			var fnTextPopup = function(arr, options) {
+				// arr参数是必须的
+				if(!arr || !arr.length) {
+					return;
+				}
+				// 主逻辑
+				var index = 0;
+				document.documentElement.addEventListener('click', function(event) {
+					var x = event.pageX,
+						y = event.pageY;
+					var eleText = document.createElement('span');
+					eleText.className = 'text-popup';
+					this.appendChild(eleText);
+					if(arr[index]) {
+						eleText.innerHTML = arr[index];
+					} else {
+						index = 0;
+						eleText.innerHTML = arr[0];
+					}
+					// 动画结束后删除自己
+					eleText.addEventListener('animationend', function() {
+						eleText.parentNode.removeChild(eleText);
+					});
+					// 位置
+					eleText.style.left = (x - eleText.clientWidth / 2) + 'px';
+					eleText.style.top = (y - eleText.clientHeight) + 'px';
+					// index递增
+					index++;
+				});
+			};
+
+			fnTextPopup(['哲','哲','是','最','棒','的']);
+		</script>
+    </body>
+</html>
