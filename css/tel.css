@@ -6,7 +6,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     font-family: Tahoma, Verdana, Arial, sans-serif;
-    background-color: lightslategrey;
+    /**background-color: lightslategrey;*/
 }
 .content{
     margin: 15em 0 0;
