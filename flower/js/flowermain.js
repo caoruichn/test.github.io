@@ -1,5 +1,6 @@
 document.write("<script language=javascript src='./js/manualflower.js'></script>");
 document.write("<script language=javascript src='./js/flower.js'></script>");
+document.write("<script language=javascript src='./js/parts.js'></script>");
 document.write("<script language=javascript src='./js/other.js'></script>");
 var nowDiv = "manualflower"
 window.onload=function(){
@@ -30,7 +31,7 @@ function showFiles(domId,fileList) {
   document.getElementById(domId).innerHTML = newDom
 }
 
-function showdiv(ida,idb,idc){
+function showdiv(ida,idb,idc,idd){
   if(nowDiv == ida){
     return;
   }
@@ -38,10 +39,11 @@ function showdiv(ida,idb,idc){
   modifyStyle(ida,"block","aliceblue")
   modifyStyle(idb,"none","blue")
   modifyStyle(idc,"none","blue")
+  modifyStyle(idd,"none","blue")
   showFiles(ida+"-container",ida);
 }
 function modifyStyle(id,display,color){
-  document.getElementById(id+"-container").style.display=display;
+  document.getElementById(id).style.display=display;
   document.getElementById(id+"-title").style.color=color;
 }
 

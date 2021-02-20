@@ -19,6 +19,16 @@ body{
   break-inside: avoid;
   margin-bottom: 10px;
 }
+.tipsDiv{
+  width: 100%;
+  font-size: 20px;
+  text-indent:2em;
+  background-color: rgb(233 233 233);
+}
+.tipSDivItem{
+  color: #666e74;
+  line-height: 40px;
+}
 .img{
   width: 100%;
 }
