@@ -12,7 +12,7 @@ var manualflower = [
     code:"A001",
     price:"--",
     pic:"./img/manualflower/A001.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A001.jpg"
   },
   {
@@ -20,7 +20,7 @@ var manualflower = [
     code:"A002",
     price:"--",
     pic:"./img/manualflower/A002.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A002.jpg"
   },
   {
@@ -28,7 +28,7 @@ var manualflower = [
     code:"A003",
     price:"--",
     pic:"./img/manualflower/A003.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A003.jpg"
   },
   {
@@ -36,7 +36,7 @@ var manualflower = [
     code:"A004",
     price:"--",
     pic:"./img/manualflower/A004.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A004.jpg"
   },
   {
@@ -44,7 +44,7 @@ var manualflower = [
     code:"A005",
     price:"--",
     pic:"./img/manualflower/A005.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A005.jpg"
   },
   {
@@ -52,7 +52,7 @@ var manualflower = [
     code:"A006",
     price:"--",
     pic:"./img/manualflower/A006.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A006.jpg"
   },
   {
@@ -60,7 +60,7 @@ var manualflower = [
     code:"A007",
     price:"--",
     pic:"./img/manualflower/A007.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A007.jpg"
   },
   {
@@ -68,7 +68,7 @@ var manualflower = [
     code:"A008",
     price:"--",
     pic:"./img/manualflower/A008.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A008.jpg"
   },
   {
@@ -76,7 +76,7 @@ var manualflower = [
     code:"A009",
     price:"--",
     pic:"./img/manualflower/A009.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A009.jpg"
   },
   {
@@ -84,7 +84,7 @@ var manualflower = [
     code:"A010",
     price:"--",
     pic:"./img/manualflower/A010.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A010.jpg"
   },
   {
@@ -92,7 +92,7 @@ var manualflower = [
     code:"A011",
     price:"--",
     pic:"./img/manualflower/A011.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A011.jpg"
   },
   {
@@ -100,7 +100,7 @@ var manualflower = [
     code:"A012",
     price:"--",
     pic:"./img/manualflower/A012.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A012.jpg"
   },
   {
@@ -108,7 +108,7 @@ var manualflower = [
     code:"A013",
     price:"--",
     pic:"./img/manualflower/A013.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A013.jpg"
   },
   {
@@ -116,7 +116,7 @@ var manualflower = [
     code:"A014",
     price:"--",
     pic:"./img/manualflower/A014.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A014.jpg"
   },
   {
@@ -124,7 +124,7 @@ var manualflower = [
     code:"A015",
     price:"--",
     pic:"./img/manualflower/A015.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A015.jpg"
   },
   {
@@ -132,7 +132,39 @@ var manualflower = [
     code:"A016",
     price:"--",
     pic:"./img/manualflower/A016.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"A016.jpg"
-  }
+  },
+  {
+    name:"A017.jpg-new",
+    code:"A017",
+    price:"--",
+    pic:"./img/manualflower/A017.jpg",
+    remark:"--",
+    fname:"A017.jpg"
+  },
+  {
+    name:"A018.jpg-new",
+    code:"A018",
+    price:"--",
+    pic:"./img/manualflower/A018.jpg",
+    remark:"--",
+    fname:"A018.jpg"
+  },
+  {
+    name:"A019.jpg-new",
+    code:"A019",
+    price:"--",
+    pic:"./img/manualflower/A019.jpg",
+    remark:"--",
+    fname:"A019.jpg"
+  },
+  {
+    name:"A020.jpg-new",
+    code:"A020",
+    price:"--",
+    pic:"./img/manualflower/A020.jpg",
+    remark:"--",
+    fname:"A020.jpg"
+  },,,,
 ]

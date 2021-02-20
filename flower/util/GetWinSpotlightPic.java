@@ -51,12 +51,14 @@ public class GetWinSpotlightPic {
           e.printStackTrace();
       }
     }
+    int count = 0;
     String oldJs = sbf.toString();
     StringBuffer newsbf = new StringBuffer();
     for(String fname : filesName){
       if(oldJs.contains("fname:\"" + fname + "\"")){
         continue;
       }
+      count++;
       newsbf.append("  {\n"
         + "    name:\"" + fname+"-new" + "\",\n"
         + "    code:\"" + fname.replaceAll(".jpg", "") + "\",\n"
@@ -76,5 +78,6 @@ public class GetWinSpotlightPic {
     } catch (Exception e) {
       e.printStackTrace();
     }
+    System.out.println(name + "-当前文件总数：" + filesName.size() + "；本次新增文件数：" + count);
   }
 }

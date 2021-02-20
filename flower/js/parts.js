@@ -12,7 +12,7 @@ var parts = [
     code:"C000",
     price:"--",
     pic:"./img/parts/C000.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"C000.jpg"
   },
   {
@@ -36,7 +36,15 @@ var parts = [
     code:"C003",
     price:"--",
     pic:"./img/parts/C003.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"C003.jpg"
-  }
+  },,
+  {
+    name:"献祭",
+    code:"C004",
+    price:"--",
+    pic:"./img/parts/C004.jpg",
+    remark:"无造型",
+    fname:"C004.jpg"
+  },,,
 ]

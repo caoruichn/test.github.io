@@ -12,7 +12,7 @@ var flower = [
     code:"B001",
     price:"--",
     pic:"./img/flower/B001.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B001.jpg"
   },
   {
@@ -20,7 +20,7 @@ var flower = [
     code:"B002",
     price:"--",
     pic:"./img/flower/B002.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B002.jpg"
   },
   {
@@ -28,7 +28,7 @@ var flower = [
     code:"B003",
     price:"--",
     pic:"./img/flower/B003.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B003.jpg"
   },
   {
@@ -36,7 +36,7 @@ var flower = [
     code:"B004",
     price:"--",
     pic:"./img/flower/B004.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B004.jpg"
   },
   {
@@ -44,7 +44,7 @@ var flower = [
     code:"B005",
     price:"--",
     pic:"./img/flower/B005.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B005.jpg"
   },
   {
@@ -52,7 +52,7 @@ var flower = [
     code:"B006",
     price:"--",
     pic:"./img/flower/B006.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B006.jpg"
   },
   {
@@ -60,7 +60,7 @@ var flower = [
     code:"B007-1",
     price:"--",
     pic:"./img/flower/B007-1.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B007-1.jpg"
   },
   {
@@ -68,7 +68,39 @@ var flower = [
     code:"B007-2",
     price:"--",
     pic:"./img/flower/B007-2.jpg",
-    remark:"描述",
+    remark:"--",
     fname:"B007-2.jpg"
-  }
+  },
+  {
+    name:"B008.jpg-new",
+    code:"B008",
+    price:"--",
+    pic:"./img/flower/B008.jpg",
+    remark:"--",
+    fname:"B008.jpg"
+  },
+  {
+    name:"B009.jpg-new",
+    code:"B009",
+    price:"--",
+    pic:"./img/flower/B009.jpg",
+    remark:"--",
+    fname:"B009.jpg"
+  },
+  {
+    name:"B010.jpg-new",
+    code:"B010",
+    price:"--",
+    pic:"./img/flower/B010.jpg",
+    remark:"--",
+    fname:"B010.jpg"
+  },
+  {
+    name:"B011.jpg-new",
+    code:"B011",
+    price:"--",
+    pic:"./img/flower/B011.jpg",
+    remark:"--",
+    fname:"B011.jpg"
+  },,,,
 ]

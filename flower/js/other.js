@@ -16,11 +16,11 @@ var other = [
     fname:"D001.jpg"
   },
   {
-    name:"别墅",
+    name:"楼房",
     code:"D002",
     price:"--",
     pic:"./img/other/D002.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D002.jpg"
   },
   {
@@ -28,7 +28,7 @@ var other = [
     code:"D003",
     price:"--",
     pic:"./img/other/D003.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D003.jpg"
   },
   {
@@ -36,7 +36,7 @@ var other = [
     code:"D004",
     price:"--",
     pic:"./img/other/D004.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D004.jpg"
   },
   {
@@ -44,7 +44,7 @@ var other = [
     code:"D005",
     price:"--",
     pic:"./img/other/D005.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D005.jpg"
   },
   {
@@ -52,7 +52,7 @@ var other = [
     code:"D006",
     price:"--",
     pic:"./img/other/D006.jpg",
-    remark:"描述",
+    remark:"蜡烛",
     fname:"D006.jpg"
   },
   {
@@ -60,7 +60,7 @@ var other = [
     code:"D007",
     price:"--",
     pic:"./img/other/D007.jpg",
-    remark:"描述",
+    remark:"塑料",
     fname:"D007.jpg"
   },
   {
@@ -68,7 +68,7 @@ var other = [
     code:"D008",
     price:"--",
     pic:"./img/other/D008.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D008.jpg"
   },
   {
@@ -76,7 +76,7 @@ var other = [
     code:"D009",
     price:"--",
     pic:"./img/other/D009.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D009.jpg"
   },
   {
@@ -84,7 +84,7 @@ var other = [
     code:"D010",
     price:"--",
     pic:"./img/other/D010.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D010.jpg"
   },
   {
@@ -92,7 +92,7 @@ var other = [
     code:"D011",
     price:"--",
     pic:"./img/other/D011.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D011.jpg"
   },
   {
@@ -100,7 +100,7 @@ var other = [
     code:"D012",
     price:"--",
     pic:"./img/other/D012.jpg",
-    remark:"描述",
+    remark:"纸质",
     fname:"D012.jpg"
   },
   {
@@ -128,11 +128,11 @@ var other = [
     fname:"D015.jpg"
   },
   {
-    name:"桶纸",
+    name:"筒纸",
     code:"D016",
     price:"--",
     pic:"./img/other/D016.jpg",
-    remark:"桶纸",
+    remark:"筒纸",
     fname:"D016.jpg"
-  }
+  },,,,,
 ]
