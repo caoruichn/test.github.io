@@ -59,7 +59,7 @@ public class GetWinSpotlightPic {
       }
       newsbf.append("  {\n"
         + "    name:\"" + fname+"-new" + "\",\n"
-        + "    code:\"--\",\n"
+        + "    code:\"" + fname.replaceAll(".jpg", "") + "\",\n"
         + "    price:\"--\",\n"
         + "    pic:\"./img/" + name + "/" + fname + "\",\n"
         + "    remark:\"描述\",\n"

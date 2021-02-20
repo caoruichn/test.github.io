@@ -6,5 +6,37 @@ var parts = [
     address:"扶风县法门镇宝塔村旁慈慧路东侧",
     wechat:"chj628821",
     fname:"lxfs.jpg"
+  },
+  {
+    name:"食锣",
+    code:"C000",
+    price:"--",
+    pic:"./img/parts/C000.jpg",
+    remark:"描述",
+    fname:"C000.jpg"
+  },
+  {
+    name:"献祭-水果造型",
+    code:"C001",
+    price:"--",
+    pic:"./img/parts/C001.jpg",
+    remark:"带食物造型",
+    fname:"C001.jpg"
+  },
+  {
+    name:"献祭",
+    code:"C002",
+    price:"--",
+    pic:"./img/parts/C002.jpg",
+    remark:"花纹",
+    fname:"C002.jpg"
+  },
+  {
+    name:"水饭",
+    code:"C003",
+    price:"--",
+    pic:"./img/parts/C003.jpg",
+    remark:"描述",
+    fname:"C003.jpg"
   }
 ]
