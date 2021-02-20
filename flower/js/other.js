@@ -1,9 +1,10 @@
 var other = [
   {
-    name:"图片1",
-    code:"1",
-    price:"暂无",
-    pic:"./img/test(1).jpg",
-    remark:"描述文字",
+    name:"联系方式",
+    phone:"<a href='tel:13892739412'>电话联系</a>",
+    pic:"./img/other/lxfs.jpg",
+    address:"扶风县法门镇宝塔村旁慈慧路东侧",
+    wechat:"chj628821",
+    fname:"lxfs.jpg"
   }
 ]

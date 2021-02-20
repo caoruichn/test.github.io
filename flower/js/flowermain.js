@@ -9,12 +9,22 @@ window.onload=function(){
 function showFiles(domId,fileList) {
   let newDom = ""
   for (let item of this[fileList]) {
+    if(!item){
+      continue
+    }
     newDom += "<table class='detailTable waterfall-item'>"
     newDom += "<tr><td class='valueTd' colspan='2'><img class='img' src='" + item.pic + "' alt='" + item.name + "'></td></tr>"
-    newDom += "<tr><td class='titleTd' style='width:100px'>名称</td><td class='valueTd'>" + item.name + "</td></tr>"
-    newDom += "<tr><td class='titleTd''>编号</td><td class='valueTd'>" + item.code + "</td></tr>"
-    newDom += "<tr><td class='titleTd''>价格</td><td class='valueTd'>" + item.price + "</td></tr>"
-    newDom += "<tr><td class='titleTd''>描述</td><td class='valueTd'>" + item.remark + "</td></tr>"
+    if(item.phone){
+      newDom += "<tr><td class='titleTd''>微信</td><td class='valueTd'>" + item.wechat + "</td></tr>"
+      newDom += "<tr><td class='titleTd''>电话</td><td class='valueTd'>" + item.phone + "</td></tr>"
+      newDom += "<tr><td class='titleTd''>地址</td><td class='valueTd'>" + item.address + "</td></tr>"
+    }else{
+      newDom += "<tr><td class='titleTd' style='width:100px'>名称</td><td class='valueTd'>" + item.name.replace(/.*(?=.{10}$)/,"") + "</td></tr>"
+      newDom += "<tr><td class='titleTd''>编号</td><td class='valueTd'>" + item.code + "</td></tr>"
+      newDom += "<tr><td class='titleTd''>价格</td><td class='valueTd'>" + item.price + "</td></tr>"
+      newDom += "<tr><td class='titleTd''>描述</td><td class='valueTd'>" + item.remark + "</td></tr>"
+    }
+    
     newDom += "</table>"
   }
   document.getElementById(domId).innerHTML = newDom

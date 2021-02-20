@@ -11,7 +11,8 @@ body{
   width: 100%;
   text-align: center;
   font-size: 26px;
-  background-color: deepskyblue;
+  /* background-color: deepskyblue; */
+  background: linear-gradient(90deg,#01d9ff 0,#3ea2ff 34%,#2b99ff 66%,#1b63ff 100%);
 }
 .waterfall-item {
   break-inside: avoid;
