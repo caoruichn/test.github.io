@@ -8,7 +8,7 @@ var parts = [
     fname:"lxfs.jpg"
   },
   {
-    name:"食锣",
+    name:"食饹",
     code:"C000",
     price:"--",
     pic:"./img/parts/C000.jpg",
