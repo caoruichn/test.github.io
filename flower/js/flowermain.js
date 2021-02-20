@@ -15,7 +15,7 @@ function showFiles(domId,fileList) {
     newDom += "<table class='detailTable waterfall-item'>"
     newDom += "<tr><td class='valueTd' colspan='2'><img class='img' src='" + item.pic + "' alt='" + item.name + "'></td></tr>"
     if(item.phone){
-      newDom += "<tr><td class='titleTd''>微信</td><td class='valueTd'>" + item.wechat + "</td></tr>"
+      newDom += "<tr><td class='titleTd'' style='width:100px'>微信</td><td class='valueTd'>" + item.wechat + "</td></tr>"
       newDom += "<tr><td class='titleTd''>电话</td><td class='valueTd'>" + item.phone + "</td></tr>"
       newDom += "<tr><td class='titleTd''>地址</td><td class='valueTd'>" + item.address + "</td></tr>"
     }else{

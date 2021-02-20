@@ -4,13 +4,14 @@ body{
 .waterfall-container {
   column-count: 2;
   /* background-color: skyblue; */
+  font-size: 24px;
 }
 .container-title{
-  line-height: 60px;
+  line-height: 100px;
   display: inline-flex;
   width: 100%;
   text-align: center;
-  font-size: 26px;
+  font-size: 40px;
   /* background-color: deepskyblue; */
   background: linear-gradient(90deg,#01d9ff 0,#3ea2ff 34%,#2b99ff 66%,#1b63ff 100%);
 }
@@ -30,7 +31,7 @@ body{
   height: 50px;
   background: lightskyblue;
   border-width: 0px;
-  font-size: 20px;
+  font-size: 24px;
   color: white;
 }
 /** 表单表格样式 */
