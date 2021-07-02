@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.text-popup {
+				animation: textPopup 1s;
+				color: red;
+				user-select: none;
+				white-space: nowrap;
+				position: absolute;
+				z-index: 99;
+			}
+			
+			@keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+			@-moz-keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+			@-webkit-keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+			@-o-keyframes textPopup {
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<script>
+      var listInfo = ['你再不回去迪士尼就要没公主了',
+        '给别人条活路吧，别打扮了',
+        '最近的自拍发我，我要换壁纸了',
+        '我要是有这颜值我走路都横着走',
+        '很好奇，你照镜子的时候，会不会被美晕啊',
+        '我该怎么夸你漂亮才能不显得俗套',
+        '风吹落的不止红叶点点，还有我想你时止不住的愁思',
+        '不要担心夜晚的到来，当黑暗包裹这座城市，我也会把你紧紧抱在怀里',
+        '尽管未来的路我心里也没底，但我还是决定不顾一切和你走下去',
+        '可能是花光了一生的运气，终遇见了姗姗来迟的你，不敢奢望太多，只想给你温暖，尽我所能',
+        '未来如果没有你在的话，即使只是想想也觉得挺可怕的',
+        '一切都好，特别是你',
+        '互相忙碌，互相牵挂，一起长大两情相悦，双倍快乐',
+        '希望住在心里的人，以后也住在家里',
+        '对你这种人，我除了恋爱跟你也没什么好谈的',
+        '山有木兮木有枝，心悦君兮君不知',
+        '牵着我的手，闭着眼睛走你也不会迷路',
+        '春水初生，春林初盛，春风十里，不如你',
+        '时光静好，与君语；细水流年，与君同；繁华落尽，与君老',
+        '死生契阔，与子成说，执子之手，与子偕老'];
+
+			var fnTextPopup = function(arr, options) {
+				// arr参数是必须的
+				if(!arr || !arr.length) {
+					return;
+				}
+				// 主逻辑
+				document.documentElement.addEventListener('click', function(event) {
+					var x = event.pageX,
+						y = event.pageY;
+					var eleText = document.createElement('span');
+					eleText.className = 'text-popup';
+					this.appendChild(eleText);
+          var index = myrandom();
+					if(arr[index]) {
+						eleText.innerHTML = arr[index];
+					} else {
+						index = 0;
+						eleText.innerHTML = arr[0];
+					}
+					// 动画结束后删除自己
+					eleText.addEventListener('animationend', function() {
+						eleText.parentNode.removeChild(eleText);
+					});
+					// 位置
+					eleText.style.left = (x - eleText.clientWidth / 2) + 'px';
+					eleText.style.top = (y - eleText.clientHeight) + 'px';
+				});
+			};
+
+      function myrandom(){
+        var max = this.listInfo.length - 1
+        return Math.round(Math.random()*max)
+      }
+
+			fnTextPopup(this.listInfo);
+
+		</script>
+	</body>
+
+</html>
