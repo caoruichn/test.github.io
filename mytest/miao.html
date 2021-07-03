@@ -1,126 +1,226 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      background-color: #fff0f4;
+    }
+    .text-popup {
+      animation: textPopup 3s;
+      color: red;
+      user-select: none;
+      white-space: nowrap;
+      position: absolute;
+      z-index: 99;
+    }
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style>
-			.text-popup {
-				animation: textPopup 2s;
-				color: red;
-				user-select: none;
-				white-space: nowrap;
-				position: absolute;
-				z-index: 99;
-			}
-			
-			@keyframes textPopup {
-				100% {
-					opacity: 0;
-				}
-				5% {
-					opacity: 1;
-				}
-				100% {
-					transform: translateY(-50px);
-				}
-			}
-			@-moz-keyframes textPopup {
-				100% {
-					opacity: 0;
-				}
-				5% {
-					opacity: 1;
-				}
-				100% {
-					transform: translateY(-50px);
-				}
-			}
-			@-webkit-keyframes textPopup {
-				100% {
-					opacity: 0;
-				}
-				5% {
-					opacity: 1;
-				}
-				100% {
-					transform: translateY(-50px);
-				}
-			}
-			@-o-keyframes textPopup {
-				100% {
-					opacity: 0;
-				}
-				5% {
-					opacity: 1;
-				}
-				100% {
-					transform: translateY(-50px);
-				}
-			}
-		</style>
-	</head>
-
-	<body>
-		<script>
-      var listInfo = ['你再不回去迪士尼就要没公主了',
-        '给别人条活路吧，别打扮了',
-        '最近的自拍发我，我要换壁纸了',
-        '我要是有这颜值我走路都横着走',
-        '很好奇，你照镜子的时候，会不会被美晕啊',
-        '我该怎么夸你漂亮才能不显得俗套',
-        '风吹落的不止红叶点点，还有我想你时止不住的愁思',
-        '不要担心夜晚的到来，当黑暗包裹这座城市，我也会把你紧紧抱在怀里',
-        '尽管未来的路我心里也没底，但我还是决定不顾一切和你走下去',
-        '可能是花光了一生的运气，终遇见了姗姗来迟的你，不敢奢望太多，只想给你温暖，尽我所能',
-        '未来如果没有你在的话，即使只是想想也觉得挺可怕的',
-        '一切都好，特别是你',
-        '互相忙碌，互相牵挂，一起长大两情相悦，双倍快乐',
-        '希望住在心里的人，以后也住在家里',
-        '对你这种人，我除了恋爱跟你也没什么好谈的',
-        '山有木兮木有枝，心悦君兮君不知',
-        '牵着我的手，闭着眼睛走你也不会迷路',
-        '春水初生，春林初盛，春风十里，不如你',
-        '时光静好，与君语；细水流年，与君同；繁华落尽，与君老',
-        '死生契阔，与子成说，执子之手，与子偕老'];
-
-			var fnTextPopup = function(arr, options) {
-				// arr参数是必须的
-				if(!arr || !arr.length) {
-					return;
-				}
-				// 主逻辑
-				document.documentElement.addEventListener('click', function(event) {
-					var x = event.pageX,
-						y = event.pageY;
-					var eleText = document.createElement('span');
-					eleText.className = 'text-popup';
-					this.appendChild(eleText);
-          var index = myrandom();
-					if(arr[index]) {
-						eleText.innerHTML = arr[index];
-					} else {
-						index = 0;
-						eleText.innerHTML = arr[0];
-					}
-					// 动画结束后删除自己
-					eleText.addEventListener('animationend', function() {
-						eleText.parentNode.removeChild(eleText);
-					});
-					// 位置
-					eleText.style.left = (x - eleText.clientWidth / 2) + 'px';
-					eleText.style.top = (y - eleText.clientHeight) + 'px';
-				});
-			};
-
-      function myrandom(){
-        var max = this.listInfo.length - 1
-        return Math.round(Math.random()*max)
+    @keyframes textPopup {
+      100% {
+        opacity: 0;
       }
+      5% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-50px);
+      }
+    }
 
-			fnTextPopup(this.listInfo);
+    @-moz-keyframes textPopup {
+      100% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-50px);
+      }
+    }
 
-		</script>
-	</body>
+    @-webkit-keyframes textPopup {
+      100% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-50px);
+      }
+    }
+
+    @-o-keyframes textPopup {
+      100% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-50px);
+      }
+    }
+
+    .header-text{
+      background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+      -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+      -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+      -webkit-background-size: 200% 100%; 
+      -webkit-animation: masked-animation 5s linear infinite;
+      font-size: 20px;
+      margin-top: 100px;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+    }
+    @keyframes masked-animation {
+      0% {
+        background-position: 0  0;
+      }
+      100% {
+        background-position: -100%  0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-text" id="headertext" onmouseover="randomHead(this)">点击页面任意位置</div>
+  <script>
+    /** 随机显示文字 */
+    var listInfo = ['你再不回去迪士尼就要没公主了',
+      '给别人条活路吧，别打扮了',
+      '最近的自拍发我，我要换壁纸了',
+      '我要是有这颜值我走路都横着走',
+      '很好奇，你照镜子的时候，会不会被美晕啊',
+      '我该怎么夸你漂亮才能不显得俗套',
+      '风吹落的不止红叶点点，还有我想你时止不住的愁思',
+      '不要担心夜晚的到来，当黑暗包裹这座城市，我也会把你紧紧抱在怀里',
+      '尽管未来的路我心里也没底，但我还是决定不顾一切和你走下去',
+      '可能是花光了一生的运气，终遇见了姗姗来迟的你，不敢奢望太多，只想给你温暖，尽我所能',
+      '未来如果没有你在的话，即使只是想想也觉得挺可怕的',
+      '一切都好，特别是你',
+      '互相忙碌，互相牵挂，一起长大两情相悦，双倍快乐',
+      '希望住在心里的人，以后也住在家里',
+      '对你这种人，我除了恋爱跟你也没什么好谈的',
+      '山有木兮木有枝，心悦君兮君不知',
+      '牵着我的手，闭着眼睛走你也不会迷路',
+      '春水初生，春林初盛，春风十里，不如你',
+      '时光静好，与君语；细水流年，与君同；繁华落尽，与君老',
+      '死生契阔，与子成说，执子之手，与子偕老'];
+    /** 随机颜色 */
+    var listColor = [
+      'red',
+      'green',
+      'blue',
+      'BlueViolet',
+      'Brown',
+      'BurlyWood',
+      'CadetBlue',
+      'Chocolate',
+      'Coral',
+      'CornflowerBlue',
+      'Crimson',
+      'DarkCyan',
+      'DarkGoldenRod',
+      'DarkGreen',
+      'DarkMagenta',
+      'Darkorange',
+      'DarkOrchid',
+      'DarkRed',
+      'DarkSalmon',
+      'DarkSeaGreen',
+      'DarkTurquoise',
+      'DarkViolet',
+      'DeepPink',
+      'DeepSkyBlue',
+      'DodgerBlue',
+      'FireBrick',
+      'ForestGreen',
+      'Fuchsia',
+      'Gold',
+      'GoldenRod',
+      'HotPink',
+      'IndianRed',
+      'LimeGreen',
+      'MediumAquaMarine',
+      'MediumOrchid',
+      'MediumPurple',
+      'MediumSeaGreen',
+      'MediumSlateBlue',
+      'MediumTurquoise',
+      'MediumVioletRed',
+      'MidnightBlue',
+      'Olive',
+      'OliveDrab',
+      'Orange',
+      'OrangeRed',
+      'Orchid',
+      'Peru',
+      'Pink',
+      'Plum',
+      'PowderBlue',
+      'Purple',
+      'RosyBrown',
+      'RoyalBlue',
+      'SaddleBrown',
+      'Salmon',
+      'SandyBrown',
+      'SeaGreen',
+      'Tomato',
+      'YellowGreen'
+    ];
+    const textAlign = ["left","center","right"]
+    var headertext = document.getElementById('headertext');
+    /** 随机位置 */
+    function randomHead(obj, str){
+      obj.style.marginTop = getOffsetTop(obj.offsetTop, obj.offsetHeight) + "px"
+      obj.style.textAlign = textAlign[myrandom(textAlign.length-1)];
+    }
+    /** 获取上偏移 - 不能在原位置 */
+    function getOffsetTop(oldOffsetTop,oldOffsetHeight){
+      var ran = myrandom(window.innerHeight - 200 - oldOffsetHeight)+100//随机位置
+      if(ran >= oldOffsetTop && ran <= (oldOffsetTop + oldOffsetHeight)){
+        return getOffsetTop(oldOffsetTop,oldOffsetHeight)
+      }
+      return ran;
+    }
+
+    var fnTextPopup = function (arr, options) {
+      // arr参数是必须的
+      if (!arr || !arr.length) {
+        return;
+      }
+      // 主逻辑
+      document.documentElement.addEventListener('click', function (event) {
+        var x = event.pageX, y = event.pageY;
+        var eleText = document.createElement('span');
+        eleText.className = 'text-popup';
+        eleText.style.color = listColor[myrandom(listColor.length - 1)]
+        this.appendChild(eleText);
+        var str = arr[myrandom(arr.length - 1)]
+        eleText.innerHTML = str;
+        headertext.innerHTML = str;
+        // 动画结束后删除自己
+        eleText.addEventListener('animationend', function () {
+          eleText.parentNode.removeChild(eleText);
+        });
+        // 位置
+        eleText.style.left = (x - eleText.clientWidth / 2) + 'px';
+        eleText.style.top = (y - eleText.clientHeight) + 'px';
+      });
+    };
+
+    /** 获取0-max随机数 */
+    function myrandom(max) {
+      return Math.round(Math.random() * max)
+    }
+    /**  */
+    fnTextPopup(this.listInfo);
+  </script>
+</body>
 
 </html>
