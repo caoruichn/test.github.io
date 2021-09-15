@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>快递信息查询</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.5/lib/theme-chalk/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/eat.css">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui@2.15.5/lib/index.js"></script>
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div class="page_main" id="app">
+      <div class="container_title">
+        <div class="title_name">快递信息查询</div>
+        <div class="title_search">
+          <input class="email_bt" placeholder="请输入收件人手机号查询" name="search" v-model="key">
+          <button class="search_bt" @click="searchButton()" v-loading="searchloading" :disabled="searchloading">查询</button>
+        </div>
+      </div>
+
+
+  
+      <div class="express_body">
+        <div class="express_tips" id="express_tips" v-if="tips && tips.length > 0">
+          <div class="title">公告</div>
+          <p v-for="(item, index) in tips" :key="index">{{item}}</p>
+        </div>
+
+        <div class="express_content">
+          <el-card class="box-card" v-if="chooseList && chooseList.length > 0">
+            <div slot="header" class="clearfix">
+              <span style="line-height:30px">当前号码的快递信息有多条，请点击需要查询的信息</span>
+            </div>
+            
+            <el-table :data="chooseList" style="width: 100%" @row-click="rowClick" border>
+              <el-table-column label="序号" type="index" header-align="center" align="center" width="60px"></el-table-column>
+              <el-table-column prop="id" label="id" header-align="center" align="center"></el-table-column>
+              <el-table-column prop="from" label="发" header-align="center" align="center"></el-table-column>
+              <el-table-column prop="to" label="收" header-align="center" align="center"></el-table-column>
+            </el-table>
+          </el-card>
+
+          <el-alert
+            v-if="alertDescription"
+            title="提示" type="info"
+            :description="alertDescription"
+            show-icon :closable="false">
+          </el-alert>
+
+          <ul class="express_list" v-if="searchBody">
+            <li>
+              <div class="express_box">
+                <div class="ci"></div>
+                <div class="express_main">
+                  <el-descriptions class="margin-top"  :column="3" size="mini" border>
+                    <el-descriptions-item>
+                      <template slot="label">收件人</template>{{initInfo.toName}}
+                    </el-descriptions-item>
+                    <el-descriptions-item>
+                      <template slot="label">手机号</template>{{initInfo.toPhone}}
+                    </el-descriptions-item>
+                    <el-descriptions-item>
+                      <template slot="label">快递单号</template>{{initInfo.code}}
+                    </el-descriptions-item>
+                    <el-descriptions-item>
+                      <template slot="label">省份</template>{{initInfo.toProvince}}
+                    </el-descriptions-item>
+                    <el-descriptions-item>
+                      <template slot="label">城市</template>{{initInfo.toCity}}
+                    </el-descriptions-item>
+                    <el-descriptions-item>
+                      <template slot="label">区县</template>{{initInfo.toArea}}
+                    </el-descriptions-item>
+                    <el-descriptions-item>
+                      <template slot="label">提示</template>
+                      已获取到您的快递单号，正在跳转到查询页面，请稍候...
+                      如长时间未跳转请点击<a href="" @click="goto100()">此处</a> <span></span>
+                    </el-descriptions-item>
+                  </el-descriptions>
+                </div>
+              </div>
+            </li>
+            <li v-for="(item, index) in resault" :key="index">
+              <div class="express_box">
+                <div class="ci"></div>
+                <div class="express_info">
+                  <div class="info_time">{{item.day}} {{item.time}}</div>
+                  <div class="info_msg">【{{item.state}}】{{item.msg}}</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="jinrishici" id="jinrishici">
+            <div class="j_content" id="j_content"></div>
+            <span class="j_author" id="j_author"></span>
+            <span class="j_matchTags" id="j_matchTags"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { getTips } from "./js/tips.js"
+      import { getData } from "./js/data.js"
+
+      Vue.prototype.$http = axios;
+      new Vue({
+        el: '#app',
+        data: function() {
+          return {
+            key: '',
+            tips: [],
+            dataInfo: {},
+            chooseList:[],
+            resault:[],
+            alertDescription: null,
+            searchloading: false,
+            searchBody: false,
+            initInfo:{}
+          }
+        },
+        created() {
+          this.tips = getTips();
+          this.dataInfo = getData();
+        },
+        methods: {
+          /** 点击查询按钮 */
+          searchButton(){
+            this.alertDescription = null
+            this.resault = []
+            if(!/^(1(([38]\d)|(4[57])|(5[0-35-9])|66|(7[0135-8])|(9[89]))\d{8})$/.test(this.key)){
+              this.alertDescription = "请输入正确的电话号码"
+              return
+            }
+            if(!this.dataInfo || JSON.stringify(this.dataInfo) == "{}"){
+              this.alertDescription = "暂无信息，请稍后再查"
+              return
+            }
+            let searchKey = this.key.substring(0,3) + this.key.substring(7)
+            let item = this.dataInfo[searchKey]
+            if(!item || item.length == 0){
+              this.alertDescription = "暂无相关信息，请重试或稍后再查"
+              return
+            }
+            if(item.length == 1){//1条
+              this.searchImpl(item[0])
+            }else{//2条及以上
+              this.chooseList = item
+            }
+          },
+          /** 调用接口 */
+          searchImpl(row){
+            this.searchBody = true
+            this.initInfo = row
+
+            var that = this;
+            setTimeout(function () {
+              window.location.href="https://www.kuaidi100.com/chaxun?com=shunfeng&nu=" + row.code
+            },1000);
+
+
+            return
+
+            this.resault = [
+              {
+                day:'今天',
+                time:'15:20:22',
+                state:'已签收',
+                msg:'已经在菜鸟驿站签收'
+              },{
+                day:'昨天',
+                time:'16:05:22',
+                state:'派件中',
+                msg:'快递员正在派件，请耐心等待'
+              },{
+                day:'前天',
+                time:'09:56:02',
+                state:'运输中',
+                msg:'宝贝正在向你飞奔。'
+              }
+            ]
+
+            
+
+            this.searchloading = true
+            let param = new URLSearchParams()
+            param.append('title', 1)
+            param.append('phone', 2)
+            param.append('address', 3)
+            let config = {
+              headers: {
+                'content-Type': 'application/x-www-form-urlencoded'
+              }
+            }
+            this.$http.post('url', param,config).then(function (res) {
+              if (res.status === 200) {
+                console.log(res);
+              } else {
+                alert("出现错误");
+              }
+            }).catch(err => {
+              this.alertDescription = err
+            }).finally(_=>{
+              this.searchloading = false
+            })
+          },
+          /** 选择 */
+          rowClick(row, column, event){
+            this.searchImpl(row)
+            this.chooseList = []
+          },
+          goto100(){
+            window.location.href="https://www.kuaidi100.com/chaxun?com=shunfeng&nu=" + this.initInfo.code
+          }
+        },
+      })
+
+      jinrishici.load(function(result) {
+        if(!result || result.status != "success"){
+          return
+        }
+
+        let data = result.data
+        let tags = ""
+        for(let i of data.matchTags){
+          tags += i + "、"
+        }
+        if(tags){
+          tags = tags.replace(/、$/,"")
+        }
+        document.getElementById("j_content").innerHTML = data.content
+        document.getElementById("j_author").innerHTML = data.origin.title + " · " + data.origin.dynasty + " · " + data.origin.author
+        document.getElementById("j_matchTags").innerHTML = tags
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+body{
+  padding: 0;
+  margin:0px;
+  font: 12px "宋体", "Arial Narrow", HELVETICA;
+  letter-spacing: 1px;
+  background-color: #e7eaec;
+}
+.mainpage{
+  width: 90%;
+  margin: auto;
+}
+.boxcard{
+  width: 100%;
+}
+.el-card__header{
+  background-color: rgb(239, 242, 245);
+}
+.el-card__body{
+  min-height: 300px;
+}
+.elalert {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.el-tag + .el-tag {
+  margin-left: 10px;
+}
+.button-new-tag {
+  margin-left: 10px;
+  height: 25px;
+  line-height: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.input-new-tag {
+  width: 90px;
+  margin-left: 10px;
+  vertical-align: bottom;
+}
+.el-alert{
+  padding: 2px 16px;
+}
