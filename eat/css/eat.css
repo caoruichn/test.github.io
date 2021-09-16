@@ -5,6 +5,19 @@ body{
   letter-spacing: 1px;
   background-color: #e7eaec;
 }
+.jrshici{
+  text-align: center;
+}
+.jrshiciother{
+  margin-left: 200px;
+}
+.el-tooltip__popper{
+  max-width: 600px;
+}
+.el-tooltip__popper p{
+  text-indent: 2em;
+  line-height: 2em;
+}
 .mainpage{
   width: 90%;
   margin: auto;
@@ -33,7 +46,7 @@ body{
   padding-bottom: 0;
 }
 .input-new-tag {
-  width: 90px;
+  width: 150px;
   margin-left: 10px;
   vertical-align: bottom;
 }
