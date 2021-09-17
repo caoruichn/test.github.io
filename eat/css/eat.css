@@ -1,7 +1,6 @@
 body{
   padding: 0;
   margin:0px;
-  font-size:1.4rem;
   letter-spacing: 1px;
   background-color: #e7eaec;
 }
@@ -10,7 +9,7 @@ body{
   margin: 0 0 0.5em 0;
 }
 .jrshiciother{
-  margin-left: 200px;
+  /* margin-left: 200px; */
 }
 .el-tooltip__popper{
   max-width: 600px;
@@ -56,7 +55,7 @@ body{
 }
 
 
-@media screen and (max-width: 1080px) {
+/* @media screen and (max-width: 1080px) {
   .el-tabs__item{
     font-size: 1.5em;
     margin: 0.5em 0;
@@ -72,16 +71,15 @@ body{
     font-size: 1.2em;
   }
   .el-tag--small, .el-tag--medium {
-    height: 1.5em;
+    height: 1em;
     padding: 0 10px;
-    line-height: 1.5em;
-    margin: 5px 0;
-    font-size: 1.1em;
+    line-height: 1em;
+    font-size: 0.8em;
   }
   .el-button--mini, .el-button--small{
-    font-size: 1.1em;
-    height: 1.5em;
-    line-height: 1.5em;
+    font-size: 0.8em;
+    height: 1em;
+    line-height: 1em;
   }
   .input-new-tag{
     width: 300px;
@@ -98,6 +96,7 @@ body{
     color: darkcyan;
   }
   .jrshiciother{
-    font-size: 1.1em;
+    margin-left: 0px;
+    font-size: 1em;
   }
-}
+} */
