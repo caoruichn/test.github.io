@@ -14,7 +14,7 @@
 <body>
   <div id="app" class="mainpage">
     <div v-if="shiciData && shiciData.content" class="jrshici">
-      <h2>{{shiciData.content}}</h2>
+      <h3>{{shiciData.content}}</h3>
       <div class="jrshiciother">
         <span>{{shiciData.origin.title}}
           <el-tooltip class="item" effect="dark" placement="top">
@@ -35,15 +35,17 @@
       <template v-for="(item, index) in foodInfo">
         <el-tab-pane :key="index" v-if="item.status">
           <span slot="label"><i :class="item.icon"></i>{{item.name}}</span>
+
           <el-card class="boxcard">
             <div slot="header" class="clearfix">
               <span>{{item.name}}列表（可自行添加或者删除）</span>
-              <el-button-group style="float: right;margin: -5px 0 0 0;">
-                <el-button size="medium" style="padding: 5px 10px;" type="primary" @click="searchButton(item.data)" plain icon="el-icon-refresh">随机</el-button>
-                <el-button size="medium" style="padding: 5px 10px;" type="info" @click="clearMsg()" plain icon="el-icon-magic-stick">清空随机信息</el-button>
-                <el-button size="medium" style="padding: 5px 10px;" type="success" @click="shiciload()" plain v-if="false">诗词</el-button>
-              </el-button-group>
             </div>
+            <el-button-group>
+              <el-button size="medium" style="padding: 5px 10px;" type="success" @click="searchButton(item.data)" plain icon="el-icon-refresh">随机</el-button>
+              <el-button size="medium" style="padding: 5px 10px;" type="warning" @click="clearMsg()" plain icon="el-icon-magic-stick">清空随机信息</el-button>
+            </el-button-group>
+
+            <el-divider><i class="el-icon-food"></i></el-divider>
             
             <el-tag
               :key="i"
@@ -141,7 +143,7 @@
         
       },
       mounted() {
-        this.shiciload()
+        //this.shiciload()
       },
       methods: {
         /** 点击查询按钮 */

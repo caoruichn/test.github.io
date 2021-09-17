@@ -55,6 +55,20 @@ body{
 }
 
 
+.el-tabs--top.el-tabs--border-card>.el-tabs__header .el-tabs__item:nth-child(2){
+  padding-left: 10px;
+}
+.el-tabs--top.el-tabs--border-card>.el-tabs__header .el-tabs__item:last-child{
+  padding-right: 10px;
+}
+.el-tabs__item{
+  padding: 0 10px;
+}
+.el-divider--horizontal{
+  margin: 12px 0;
+}
+
+
 /* @media screen and (max-width: 1080px) {
   .el-tabs__item{
     font-size: 1.5em;
