@@ -47,15 +47,17 @@
 
             <el-divider><i class="el-icon-food"></i></el-divider>
             
-            <el-tag
-              :key="i"
-              :type="resault==tag ? 'success' : ''"
-              v-for="(tag,i) in item.data"
-              closable size="small"
-              :disable-transitions="false"
-              @close="handleClose(tag, item.data)">
-              {{tag}}
-            </el-tag>
+            <div class="tag-group">
+              <el-tag
+                :key="i"
+                :type="resault==tag ? 'success' : ''"
+                v-for="(tag,i) in item.data"
+                closable size="small"
+                :disable-transitions="false"
+                @close="handleClose(tag, item.data)">
+                {{tag}}
+              </el-tag>
+            </div>
             <el-input
               class="input-new-tag"
               v-if="inputVisible"
@@ -143,7 +145,7 @@
         
       },
       mounted() {
-        //this.shiciload()
+        this.shiciload()
       },
       methods: {
         /** 点击查询按钮 */
