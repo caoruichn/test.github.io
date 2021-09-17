@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
   <meta charset="UTF-8">
   <title>吃啥</title>
   <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.5/lib/theme-chalk/index.css">
@@ -25,7 +26,8 @@
         <span>{{shiciData.origin.dynasty}}</span>
         <el-divider direction="vertical"></el-divider>
         <span>{{shiciData.origin.author}}</span>
-        <el-divider direction="vertical"></el-divider>
+      </div>
+      <div class="jrshiciother">
         <el-tag v-for="(item,index) in shiciData.matchTags" size="medium" type="success" :key="index">{{item}}</el-tag>
       </div>
     </div>
@@ -38,7 +40,7 @@
               <span>{{item.name}}列表（可自行添加或者删除）</span>
               <el-button-group style="float: right;margin: -5px 0 0 0;">
                 <el-button size="medium" style="padding: 5px 10px;" type="primary" @click="searchButton(item.data)" plain icon="el-icon-refresh">随机</el-button>
-                <el-button size="medium" style="padding: 5px 10px;" type="info" @click="clearMsg()" plain icon="el-icon-magic-stick">清空随机过程信息</el-button>
+                <el-button size="medium" style="padding: 5px 10px;" type="info" @click="clearMsg()" plain icon="el-icon-magic-stick">清空随机信息</el-button>
                 <el-button size="medium" style="padding: 5px 10px;" type="success" @click="shiciload()" plain v-if="false">诗词</el-button>
               </el-button-group>
             </div>
@@ -123,7 +125,7 @@
               data:[]
             },{
               name:'聚餐',
-              icon:'el-icon-moon-night',
+              icon:'el-icon-dish',
               status: true,
               data:[
                 "火锅",

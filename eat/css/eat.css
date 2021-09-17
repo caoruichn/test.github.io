@@ -1,12 +1,13 @@
 body{
   padding: 0;
   margin:0px;
-  font: 12px "宋体", "Arial Narrow", HELVETICA;
+  font-size:1.4rem;
   letter-spacing: 1px;
   background-color: #e7eaec;
 }
 .jrshici{
   text-align: center;
+  margin: 0 0 0.5em 0;
 }
 .jrshiciother{
   margin-left: 200px;
@@ -52,4 +53,51 @@ body{
 }
 .el-alert{
   padding: 2px 16px;
+}
+
+
+@media screen and (max-width: 1080px) {
+  .el-tabs__item{
+    font-size: 1.5em;
+    margin: 0.5em 0;
+    height: 2em;
+    line-height: 2em;
+    margin-top: -1px;
+    margin-bottom: -1px;
+  }
+  .el-button--medium{
+    font-size: 1.1em;
+  }
+  .el-card__header{
+    font-size: 1.2em;
+  }
+  .el-tag--small, .el-tag--medium {
+    height: 1.5em;
+    padding: 0 10px;
+    line-height: 1.5em;
+    margin: 5px 0;
+    font-size: 1.1em;
+  }
+  .el-button--mini, .el-button--small{
+    font-size: 1.1em;
+    height: 1.5em;
+    line-height: 1.5em;
+  }
+  .input-new-tag{
+    width: 300px;
+    font-size: 1em;
+    height: 1.5em;
+    line-height: 1.5em;
+  }
+  .el-alert__title{
+    font-size: 1em;
+    height: 1.2em;
+    line-height: 1.2em;
+  }
+  .jrshici{
+    color: darkcyan;
+  }
+  .jrshiciother{
+    font-size: 1.1em;
+  }
 }
