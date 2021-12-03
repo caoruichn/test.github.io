@@ -32,7 +32,7 @@ body{
   min-height: 200px;
 }
 .elalert {
-  max-height: 300px;
+  max-height: 150px;
   overflow-y: auto;
 }
 .el-tag + .el-tag {
